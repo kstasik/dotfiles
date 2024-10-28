@@ -45,5 +45,11 @@ bootstrap_paq {
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip',
-    "FabijanZulj/blame.nvim"
+    "FabijanZulj/blame.nvim",
+    "mhinz/vim-signify",
+
+    -- debugger
+    'mfussenegger/nvim-dap',
+    'nvim-neotest/nvim-nio',
+    'rcarriga/nvim-dap-ui'
 }

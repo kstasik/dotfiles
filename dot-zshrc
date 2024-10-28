@@ -50,7 +50,7 @@ alias vim='nvim'
 alias emacs='emacs -mm'
 alias sl='ls'
 
-eval "$(fzf --zsh)"
+# eval "$(fzf --zsh)"
 
 # sway
 export SDL_VIDEODRIVER=wayland

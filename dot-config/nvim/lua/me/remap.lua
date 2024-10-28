@@ -5,7 +5,8 @@ local opts = { noremap = true };
 vim.keymap.set("n", "<TAB>", vim.cmd.bnext, opts)
 vim.keymap.set("n", "<S-TAB>", vim.cmd.bprev, opts)
 vim.keymap.set("n", "zs", ":w<CR>")
--- vim.keymap.set("n", "<F6>", "<Esc>:call rust_execute_test()<Enter>", opts)
+-- vim.keymap.set("n", "<leader>r", "<Esc>:make run-world<Enter>", opts)
+vim.keymap.set("n", "<leader>r", "<Esc>:Asdasd run-world<Enter>", opts)
 
 local function set_wincmd(arg, to)
     vim.keymap.set("n", "<leader>" .. arg, function() vim.cmd.wincmd(to) end, opts)

@@ -62,14 +62,14 @@ lspconfig.rust_analyzer.setup({
         if string.match(path, 'styx/kernel') then
             print('executing styx quirks')
             client.config.settings["rust-analyzer"].check.allTargets = false
-            client.config.settings["rust-analyzer"].cargo.target = 'x86_64-unknown-none'
+            -- client.config.settings["rust-analyzer"].cargo.target = 'x86_64-unknown-none'
 
             client.notify('workspace/didChangeConfiguration', { settings = client.config.settings })
         end
 
         if string.match(path, 'scripting/backend') then
-            client.config.settings["rust-analyzer"].linkedProjects = { "backend/Cargo.toml" }
-            client.notify('workspace/didChangeConfiguration', { settings = client.config.settings })
+            -- client.config.settings["rust-analyzer"].linkedProjects = { "backend/Cargo.toml" }
+            -- client.notify('workspace/didChangeConfiguration', { settings = client.config.settings })
         end
 
         return true
@@ -92,6 +92,11 @@ lspconfig.rust_analyzer.setup({
     },
 })
 
+lspconfig.clangd.setup({
+    capabilities = capabilities,
+    on_attach = on_attach
+})
+
 lspconfig.taplo.setup({
     capabilities = capabilities,
     on_attach = on_attach
@@ -102,7 +107,7 @@ lspconfig.gopls.setup({
     on_attach = on_attach
 })
 
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
